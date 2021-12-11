@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <form [formGroup]="formAsistentes" (ngSubmit)="guardarDatos()" autocomplete="off" errorTailor>
+        <div class="row mb-3">
+            <label for="inputIden" class="col-sm-2 col-form-label">Identificación</label>
+            <div class="col-sm-4">
+                <input formControlName="inputIden" [readonly]="readonly" type="text" class="form-control" id="inputIden" maxlength="30" name="inputIden">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="SelecTipo" class="col-sm-2 col-form-label">Tipo Identificación</label>
+            <div class="col-sm-4">
+                <select formControlName="SelecTipo" class="form-select" aria-label="Default select example" name="SelecTipo" id="SelecTipo" style="width: 100%;">
+                    <option value=""></option>
+                    <option value="CC">Cedula Ciudadanía</option>
+                    <option value="CE">Cedula Extranjería</option>
+                    <option value="PE">Pasaporte</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputNombres" class="col-sm-2 col-form-label">Nombres</label>
+            <div class="col-sm-4">
+                <input formControlName="inputNombres" maxlength="100" type="text" class="form-control" id="inputNombres" name="inputNombres">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputApellidos" class="col-sm-2 col-form-label">Apellidos</label>
+            <div class="col-sm-4">
+                <input formControlName="inputApellidos" maxlength="100" type="text" class="form-control" id="inputApellidos" name="inputApellidos">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputTelefono" class="col-sm-2 col-form-label">Telefono</label>
+            <div class="col-sm-4">
+                <input  formControlName="inputTelefono" maxlength="10" type="text" class="form-control" id="inputTelefono" name="inputTelefono"  (keypress)="restrictNumeric($event)">
+            </div>
+            
+        </div>
+        <div class="row mb-3">
+            <label for="inputCorreo" class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-4">
+                <input formControlName="inputCorreo" type="email" class="form-control" id="inputCorreo" name="inputCorreo">
+            </div>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button [disabled]="formAsistentes.invalid" type="submit" class="btn btn-primary">Guardar</button>
+            <button type="button" class="btn btn-info" [routerLink]="['']">Regresar</button>
+        </div>
+    </form>
+</div>
