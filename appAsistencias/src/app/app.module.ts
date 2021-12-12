@@ -15,6 +15,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EditarAsistenteComponent } from './editar-asistente/editar-asistente.component';
+import {MatButtonModule} from '@angular/material/button';
 
 const appRoute:Routes = [
   {path:'', component:HomeComponent},
@@ -50,7 +51,8 @@ const appRoute:Routes = [
     MatTableModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -60,7 +60,6 @@ export class EditarAsistenteComponent implements OnInit {
   // Se captura los datos editados para enviarlos al servicio http
   guardarDatos() {
     if (this.formAsistentes.valid) {
-      console.log(this.id, this.formAsistentes.value)
       this.servicio.editarAsistente(this.id, this.formAsistentes.value).subscribe(
         (res) => {
           if (res.status === '200') {
